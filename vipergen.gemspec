@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = 'vipergen'
   s.version     = Vipergen::VERSION.dup
   s.platform    = Gem::Platform::RUBY
-  s.summary     = 'Generates XCode VIPER module controllers structure'
+  s.summary     = 'Generates XCode VIPER, VCSI module controllers structure'
   s.email       = 'pedro@redbooth.com'
   s.homepage    = 'http://github.com/teambox/viper-module-generator'
   s.description = 'Based on the objc.io post about VIPER. It saves time in the implementation generating the controllers and adding interactions between them (in Swift or Objective-C)'
@@ -27,12 +27,12 @@ Gem::Specification.new do |s|
 
   # Executables
   s.executables << 'vipergen'
-  s.bindir       = 'bin'   
+  s.bindir       = 'bin'
 
   # Documentation
   s.rdoc_options = ['--charset=UTF-8']
   s.extra_rdoc_files = [
     'README.md'
   ]
-  
+
 end

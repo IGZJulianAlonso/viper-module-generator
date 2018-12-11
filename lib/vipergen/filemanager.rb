@@ -1,8 +1,9 @@
 module Vipergen
+	require 'fileutils'
 	# File manager class
 	class FileManager
 
-		# Returns if the template is valid by the VIPER generator 
+		# Returns if the template is valid by the VIPER generator
 		def self.is_template_valid(template)
 			return Vipergen::TemplateManager.templates.include? template
 		end
@@ -13,7 +14,7 @@ module Vipergen
 		end
 
 		# Return the path if valid template and language
-		# @return String with valid path 
+		# @return String with valid path
 		def self.path_from(template, language)
 			return nil if !is_language_valid(language) || !is_template_valid(template)
 			return File.join(Vipergen::TemplateManager.templates_dir, template, language)
@@ -25,7 +26,7 @@ module Vipergen
 			return Dir[File.join("#{path}","/**/*")].select {|f| File.file?(f)}
 		end
 
-		# Returns the destination viper path 
+		# Returns the destination viper path
 		# @return Destination root path
 		def self.destination_viper_path(path, name)
 			expand_path = File.expand_path(path)
@@ -36,8 +37,8 @@ module Vipergen
 		def self.copy(from, to)
 			to_expand_path = File.expand_path(to)
 			from_expand_path = File.expand_path(from)
-			FileUtils.mkdir_p (to_expand_path)
-			FileUtils.copy_entry(from_expand_path, to_expand_path)	
+			FileUtils.mkdir_p(to_expand_path)
+			FileUtils.copy_entry(from_expand_path, to_expand_path)
 		end
 
 		# Move a system item to another place
