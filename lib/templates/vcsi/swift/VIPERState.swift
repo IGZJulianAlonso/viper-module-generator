@@ -6,7 +6,7 @@ struct VIPERState {
 
 extension VIPERState: Equatable {
     static func == (lhs: VIPERState, rhs: VIPERState) -> Bool {
-        return lhs.loading == rhs.loading &&
+        return lhs.loading == rhs.loading
     }
 }
 
